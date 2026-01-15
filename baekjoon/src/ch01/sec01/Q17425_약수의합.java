@@ -1,0 +1,44 @@
+package ch01.sec01;
+
+import java.io.*;
+import java.util.*;
+
+public class Q17425_약수의합 {
+
+	public static void main(String[] args) throws Exception {
+		// 약수의 합 
+		// https://www.acmicpc.net/problem/17425
+		
+		// 최대 범위 설정 
+		int MAX = 1000000;
+		long[] f = new long[MAX + 1]; // f(n): n의 약수의 합
+		long[] g = new long[MAX + 1]; // g(n): f(1) ~ f(n)의 총합 
+		
+		// 1. 배수의 원리로 f(n) 구하기 
+		Arrays.fill(f,  1); // 모든 수는 1을 약수로 가짐 
+		for (int i = 2; i <= MAX; i++) {
+			for (int j = 1; i * j <= MAX; j++) {
+				f[i * j] += i;
+			}
+		}
+		
+		// 2. 누적합으로 g(n) 구하기
+		for (int i = 1; i <= MAX; i++) {
+			g[i] = g[i - 1] + f[i];
+		}
+		
+		// 3. 입출력 처리 
+		System.setIn(new FileInputStream("res/input.txt"));
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringBuilder sb = new StringBuilder();
+		int T = Integer.parseInt(br.readLine());
+		
+		while (T-- > 0) {
+			int n = Integer.parseInt(br.readLine());
+			sb.append(g[n]).append("\n");
+		}
+		System.out.print(sb);
+	}
+
+}

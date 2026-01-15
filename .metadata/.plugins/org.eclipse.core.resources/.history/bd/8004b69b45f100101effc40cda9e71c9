@@ -1,0 +1,35 @@
+package solution;
+
+import java.io.FileInputStream;
+import java.util.Scanner;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Main {
+	public static void main(String[] args) throws Exception {
+		// BFS
+		// add(value) 또는 offer(value): 큐의 맨 뒤에 데이터 넣기
+		// poll(): 큐의 맨 앞을 꺼내고 반환. 큐가 비어 있으면 null 반환
+		// isEmpty(): 큐가 비어있는지 확인(BFS 종료 조건으로 사용)
+		
+		System.setIn(new FileInputStream("res/input.txt"));
+		Scanner sc = new Scanner(System.in);
+		int T = sc.nextInt();
+		
+		for (int tc = 1; tc <= T; tc++) {
+			System.out.print(tc + " ");
+			int N = sc.nextInt();
+			
+			Queue<Integer> queue = new LinkedList<>();
+			ArrayList<Integer>[] adjList = new ArrayList[N+1];
+			boolean[] visited = new boolean[N+1];
+			queue.add(1);
+			visited[1] = true;
+			
+		}
+		
+	}
+
+}
