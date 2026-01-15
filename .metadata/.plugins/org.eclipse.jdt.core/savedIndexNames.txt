@@ -1,4 +1,0 @@
-INDEX VERSION 1.134+/Users/barleymilk/eclipse-workspace/codingtest/.metadata/.plugins/org.eclipse.jdt.core
-1865797976.index
-3991585203.index
-3581198316.index

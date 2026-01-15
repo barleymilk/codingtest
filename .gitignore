@@ -1,4 +1,7 @@
-res/input.txt
 bin/
 *.class
 .metadata/
+.project
+.classpath
+**/res/input.txt
+input.txt
