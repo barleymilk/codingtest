@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 
 public class Q_수영대회결승전_re1 {
-    static int[] dx = {-1,1,0,0};
+  static int[] dx = {-1,1,0,0};
   static int[] dy = {0,0,-1,1};
 
   public static void main(String[] args) throws IOException {
