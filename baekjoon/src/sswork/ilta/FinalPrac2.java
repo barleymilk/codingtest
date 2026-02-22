@@ -104,11 +104,29 @@ public class FinalPrac2 {
 
     /** 쿠션 위치 계산 */
     private static double[] getCushionPos(float tx, float ty, String side) {
-        double r = DIAMETER / 2.0;
-        if (side.equals("TOP")) return new double[]{tx, (TABLE_HEIGHT - r) * 2 - ty};
-        if (side.equals("BOTTOM")) return new double[]{tx, -ty + r * 2};
-        return new double[]{tx, ty};
-    }
+      double r = DIAMETER / 2.0; // 공의 반지름
+      
+      switch (side) {
+        case "TOP":
+          // 상단 벽(127) 대칭: 2 * (127 - r) - ty
+          return new double[]{tx, (TABLE_HEIGHT - r) * 2 - ty};
+          
+        case "BOTTOM":
+          // 하단 벽(0) 대칭: 2 * (0 + r) - ty
+          return new double[]{tx, -ty + r * 2};
+            
+        case "LEFT":
+          // 좌측 벽(0) 대칭: 2 * (0 + r) - tx
+          return new double[]{-tx + r * 2, ty};
+              
+        case "RIGHT":
+          // 우측 벽(254) 대칭: 2 * (254 - r) - tx
+          return new double[]{(TABLE_WIDTH - r) * 2 - tx, ty};
+          
+        default:
+          return new double[]{tx, ty};
+      }
+    } 
 
     /** 힘 계산: 거리에 따른 비례식 + 최소 파워 확보 */
     private static float calculatePower(double x1, double y1, double x2, double y2) {
