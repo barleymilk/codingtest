@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./fx.js"></script>
+</head>
+<body>
+  <script>
+    const add = (a, b) => a + b;
+
+    // 첫번째 인자를 그 다음 인자인 함수에 적용하여 값을 반환하는 과정을 반복
+    const go = (...args) => reduce((a, f) => f(a), args);
+
+    // 함수를 reudce로 연속적으로 실행, pipe는 함수를 return
+    const pipe = (f, ...fs) => (...as) => go(f(...as), ...fs);
+
+    const products = [
+      {name: '반팔티', price: 15000},
+      {name: '긴팔티', price: 20000},
+      {name: '핸드폰케이스', price: 15000},
+      {name: '후드티', price: 30000},
+      {name: '바지', price: 25000}
+    ];
+
+    go(
+      products,
+      filter(p => p.price < 20000),
+      map(p => p.price),
+      reduce(add),
+      log
+    );
+  </script>
+  <script>  
+    const mult = curry((a, b) => a * b);
+    log(mult);        // (a, ..._) => _.length ? f(a, ..._) : (..._) => f(a, ..._)
+    log(mult(1));     // (..._) => f(a, ..._)
+    log(mult(1)(2));  // 2
+  
+    const mult3 = mult(3);
+    log(mult3(10));   // 30
+    log(mult3(5));    // 15
+    log(mult3(3));    // 9
+  </script>
+</body>
+</html>
