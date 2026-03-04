@@ -5,4 +5,5 @@ bin/
 .classpath
 **/res/input.txt
 input.txt
+input_*.txt
 .DS_Store
