@@ -1,9 +1,9 @@
-package unrank;
+package prepare_swea_a;
 
 import java.io.*;
 import java.util.*;
 
-public class S5656_벽돌깨기_2 {
+public class S5656_벽돌깨기 {
 	static int N, W, H, minRemain;
 	static int[][] originalBoard;
 	static int[] dx = {-1,1,0,0}, dy = {0,0,-1,1};
