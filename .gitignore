@@ -7,3 +7,4 @@ bin/
 input.txt
 input_*.txt
 .DS_Store
+*res
