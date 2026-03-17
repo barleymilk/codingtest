@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @keyframes sample-ani {
+      0% {
+        transform: translate(0, 0);
+      }
+      50% {
+        transform: translate(300px, 0);
+        background-color: red;
+      }
+      100% {
+        transform: translate(400px, 500px);
+      }
+    }
+    .box{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 100px;
+      height: 100px;
+      border: 2px solid #000;
+      background: #fff000;
+
+      /* # alternate : 방향을 번갈아 반복 - 레일을 따라 왔다갔다하듯이 - 0 -> 50 -> 100 -> 50 -> 0 */
+      /* # reverse : 방향을 거꾸로 100% -> 0% */
+      /* # alternate-reverse : 출발을 100%에서 - 100 -> 50 -> 0 -> 50 -> 100... */
+      /* animation: sample-ani 3s linear infinite reverse; */
+
+      /* # forwards : 애니메이션이 끝나면 그 자리에 멈추게 - animation-fill-mode */
+      animation: sample-ani 3s linear forwards;
+    }
+    .box:hover {
+      /* box를 hover하면 애니메이션이 중지 */
+      animation-play-state: paused;
+    }
+  </style>
+</head>
+<body>
+  <h1>Animation</h1>
+  <div class="box">BOX</div>
+</body>
+</html>
