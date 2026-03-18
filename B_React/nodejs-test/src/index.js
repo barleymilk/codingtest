@@ -10,9 +10,13 @@
 // const {add, sub} = require("./math");
 
 // package.json -> "type":"module"
-import {add, sub} from "./math.js"; // 확장자(.js)까지 명시해야 함.
-import mul from "./math.js";
+// import {add, sub} from "./math.js"; // 확장자(.js)까지 명시해야 함.
+// import mul from "./math.js";
 
-console.log(add(2,4)); // 6
-console.log(sub(2,4)); // -2
-console.log(mul(2,4)); // 8
+// console.log(add(2,4)); // 6
+// console.log(sub(2,4)); // -2
+// console.log(mul(2,4)); // 8
+
+import randomColor from "randomcolor";
+const color = randomColor();
+console.log(color);
