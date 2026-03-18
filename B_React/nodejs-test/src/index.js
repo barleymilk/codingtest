@@ -6,6 +6,13 @@
 // console.log(moduleData.add(1,2)); // 3
 // console.log(moduleData.sub(1,2)); // -1
 
-const {add, sub} = require("./math");
+// package.json -> "type":"commonjs"
+// const {add, sub} = require("./math");
+
+// package.json -> "type":"module"
+import {add, sub} from "./math.js"; // 확장자(.js)까지 명시해야 함.
+import mul from "./math.js";
+
 console.log(add(2,4)); // 6
 console.log(sub(2,4)); // -2
+console.log(mul(2,4)); // 8
