@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .world {
+      width: 80vw;
+      height: 80vh;
+      background-color: #eee;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      /* 3D 효과를 위한 공간 만들어주기 */
+      /* 내 눈?과의 거리 */
+      /* perspective: 500px;  */
+    }
+    .card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 100px;
+      height: 150px;
+      margin: 1em;
+      border-radius: 0.5em;
+      font-size: 1.5rem;
+      background-color: rgb(240, 201, 150);
+
+      /* 1. world에 perspective 주면 거리에 따라 다르게 보임 */
+      /* transform: rotateY(45deg); */
+
+      /* 2. card에 직접 perspective를 주면 동일하게 보임 */
+      transform: perspective(500px) rotateY(45deg);
+    }
+  </style>
+</head>
+
+<body>
+    <div class="world">
+      <div class="card">CARD</div>
+      <div class="card">CARD</div>
+      <div class="card">CARD</div>
+    </div>
+</body>
+</html>
