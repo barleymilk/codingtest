@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      display: flex;
+      
+      /* 1. 축 : row(기본), column, row-reverse, column-reverse */
+      /* flex-direction: column; */
+      
+      /* 2. 정렬(축 기준) : flex-start(기본), center, flex-end, space-between, space-around */
+      /* justify-content: space-between; */
+      
+      /* 3. 정렬(stretch - 축 수직방향 : 오뎅 잡아뜯기?) */
+      /* start, end, center, stretch */
+      /* align-items: center; */
+      /* justify-content: center; */
+      
+      height: 80vh;
+      background: grey;
+    }
+    .item {
+      /* 알아서 늘어남 - item마다 다른 숫자를 넣으면 차이가 남 */
+      /* width를 자기 콘텐츠 폭을 제외한 여백 배분 */
+      flex-grow: 1;
+
+      padding: 2em;
+      border: 3px solid black;
+      background: white;
+    }
+    .item:last-child {
+      flex-grow: 2;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item">AAA</div>
+    <div class="item">B</div>
+    <div class="item">CCCCCC</div>
+    <div class="item">DDD</div>
+    <div class="item">E</div>
+  </div>
+</body>
+</html>
