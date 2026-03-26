@@ -25,15 +25,20 @@
     .item {
       /* 알아서 늘어남 - item마다 다른 숫자를 넣으면 차이가 남 */
       /* width를 자기 콘텐츠 폭을 제외한 여백 배분 */
-      flex-grow: 1;
+      /* flex-grow: 1; */
+      /* 원래 콘텐츠의 영역 - 기본값 auto, 0으로 하면 균등해짐 */
+      /* flex-basis: 0; */
+      /* flex: 1 -> flex-grow:1; flex-shrink: 1; flex-basis:0%; */
+      /* flex-shrink : 줄어들 때의 비율 */
+      flex: 1; /* 축약형 쓰자.. */
 
       padding: 2em;
       border: 3px solid black;
       background: white;
     }
-    .item:last-child {
+    /* .item:last-child {
       flex-grow: 2;
-    }
+    } */
   </style>
 </head>
 <body>
